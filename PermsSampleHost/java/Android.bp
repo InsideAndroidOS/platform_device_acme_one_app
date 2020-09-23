@@ -1,0 +1,11 @@
+android_app {
+    name: "PermsSampleHost",
+    product_specific: true,
+    platform_apis: true,
+    privileged: true,
+    certificate: "shared",
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt"
+    ],
+}

@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50"
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.0'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionName "1.0"
+
+        applicationId 'com.acme.one.permssamplehost'
+        vectorDrawables.useSupportLibrary = false
+
+        signingConfig signingConfigs.debug
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("java/shared.keystore")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility javaVersion.VERSION_1_8
+    }
+
+    flavorDimension "default"
+
+    sourceSets {
+        main {
+            res.srcDirs = ['java/res']
+            java.srcDirs = ['java/src']
+            manifest.srcFile 'java/AndroidManifest.xml'
+        }
+    }
+}
+
