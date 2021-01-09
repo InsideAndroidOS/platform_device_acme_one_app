@@ -1,10 +1,10 @@
 cc_binary {
-    name: "stringycl",
-    srcs: ["stringycl.cpp"],
+    name: "aproximitycl",
+    srcs: ["aproximitycl.cpp"],
     vendor: true,
     shared_libs: [
         "libhidlbase",
         "libutils",
-        "vendor.acme.one.stringy@1.0"
+        "vendor.acme.one.aproximity@1.0"
     ]
 }
